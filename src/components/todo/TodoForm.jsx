@@ -23,7 +23,7 @@ const TodoForm = ({ setTodos }) => {
       id: crypto.randomUUID(),
       title,
       content,
-      isDone: "false",
+      isDone: false,
     };
 
     //useState의비동기성 찾아보기

@@ -8,16 +8,26 @@ const TodoContainer = () => {
       id: 1,
       title: "할 일1",
       content: "할 일1 내용",
-      isDone: "false",
+      isDone: false,
+    },
+    {
+      id: 2,
+      title: "할 일2",
+      content: "할 일2 내용",
+      isDone: true,
     },
   ]);
+  //isDone의 값이 참,거짓 확인 한다!
+  const workingTodos = todos.filter((todo) => !todo.isDone);
+  const doneTodos = todos.filter((todo) => todo.isDone);
+
   console.log(todos);
   return (
     <div>
       <TodoForm setTodos={setTodos} />
       <div>
-        <TodoList />
-        <TodoList />
+        <TodoList title="Working" todos={workingTodos} />
+        <TodoList title="Done" todos={doneTodos} />
       </div>
     </div>
   );
