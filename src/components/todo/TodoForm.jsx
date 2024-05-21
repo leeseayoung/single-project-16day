@@ -20,13 +20,13 @@ const TodoForm = ({ setTodos }) => {
     // if (!title || !content) return alert("입력");
 
     const nextTodo = {
-      id: crypto.randomUUID(),
+      id: crypto.randomUUID(), // 중복 X
       title,
       content,
       isDone: false,
     };
 
-    //useState의비동기성 찾아보기
+    //useState의비동기성 찾아보기 콜백 함수
     setTodos((prevTodos) => [nextTodo, ...prevTodos]);
 
     e.target.reset();
